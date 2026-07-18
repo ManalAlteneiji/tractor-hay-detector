@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial=1.0" />
+		<title>Tractor &amp; Hay Bale detector</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+	</head>
+	<body>
+      <main>
+        <header>
+          <h1>Tractor &amp; Hay Bale Detector</h1>
+          <p class="subtitle">
+            Upload a field or arial image and the YOLOv11 model will locate
+            <span class="tag tractor">tractor</span>and 
+            <span class="tag bale">hay bales</span>.
+          </p>
+        </header>
+
+        <form method="post" enctype="multipart/form-data">
+          <input type="file" name="image" accept="image/*" required>
+          <button type="submit">Detect objects</button>
+        </form> 
+
+        {% if error %}
+          <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if img_data %}
+        <section class="results">
+          <h2>Result</h2>
+          <p class="summary">{{ summary }}</p>
+          <img src="data:image/jpeg;base64, {{ img_data }}" alt="Image with detected objects">
+          {% if detection %}
+          <ul>
+            {% for d in detections %}
+              <li>{{ d }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </section>
+		{% endif %}
+        
+		<footer>
+          <p>Challenge 9</p>
+        </footer>
+      </main>
+	</body>
+</html>
