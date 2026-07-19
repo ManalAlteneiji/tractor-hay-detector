@@ -14,12 +14,12 @@ demo.png -> Shows the app detecting a tractor
 - Use case: field-activity and harvest monitoring from drone/aerial imagery for example counting bales as a proxy for hay yield
 - Dataset: 100 self-collected images labeled in Roboflow: [view it on Roboflow Universe] (https://universe.roboflow.com/ms-workspace-sad6s/object-detection-tractor-hay)
 ## Project structure 
-- app.py                # Flask application (upload → predict → annotated result)
-- best.pt               # Trained YOLOv11n weights
-- requirements.txt      # Python dependencies
-- Dockerfile            # Container definition
-- templates/index.html  # Web form + results page
-- static/style.css      # Styling
+- app.py                : Flask application (upload → predict → annotated result)
+- best.pt               : Trained YOLOv11n weights
+- requirements.txt      : Python dependencies
+- Dockerfile            : Container definition
+- templates/index.html  : Web form + results page
+- static/style.css      : Styling
 
 ## How to use the interface
 1. Open the app (locally or via the live direct link)
