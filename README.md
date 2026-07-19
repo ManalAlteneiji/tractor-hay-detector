@@ -2,6 +2,7 @@
 A Flask application serving a YOLOv11n object detection model that locates tractor & haybale in field and aerial imagery. Upload an image and getit back with bounding boxes and per-class counts. The model was trained on 100 self-collected images and labeled in Roboflow as a part of my machine learning coursework. The app is containerized with Docker and deployed publicly on Hugging Face Spaces.
 
 **Deployed app:** https://huggingface.co/spaces/Malteneiji/tractor-hay-detector
+
 **Direct link:** https://malteneiji-tractor-hay-detector.hf.space
 
 ## Preview
